@@ -1,0 +1,1 @@
+// TODO: Initialize UI paint elements & panels, canvas, buttons, attach event listeners
