@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
     var canvas = document.getElementById('paint-box');
     var ctx = canvas.getContext('2d');
 
@@ -35,12 +35,10 @@ $(document).ready(function () {
         canvas.addEventListener('mousedown', engage);
         canvas.addEventListener('mousemove', putPoint);
         canvas.addEventListener('mouseup', disengage);
+        
     }());
-
-
-    $('#arrow-top').mousedown(function () {
-        $('#top-options').slideToggle(300);
+    $('#paint-box').css('cursor', 'crosshair');
+    $('#reset-button').click(function(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
-
-    $('#canvas').css('cursor', 'crosshair');
 });
