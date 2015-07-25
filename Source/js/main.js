@@ -1,65 +1,46 @@
-
-
-var stage = new Kinetic.Stage({
-    container: 'paint-box',
-    width:$("#paint-box").width(),
-    height:$("#paint-box").height()
-});
-
-var dragging = false;
-var lastPoints = [];
-var layer = new Kinetic.Layer();
-stage.add(layer);
-var draw = function (e) {
-    if (dragging) {     
-        lastPoints.push(e.offsetX);
-        lastPoints.push(e.offsetY);
-        
-        
-        var line = new Kinetic.Line({
-            points: lastPoints,
-            stroke: 'black',
-            strokeWidth: 5,
-            lineJoin: 'round'
-        });
-        layer.add(line);
-        //layer.add(arc);
-        
-        layer.draw();
-
-    }
-    else{
-        lastPoints = [];
-    }
-
-};
-
-var engage = function (e) {
-    dragging = true;
-    draw(e);
-};
-
-var disengage = function (e) {
-    dragging = false;
-};
-
-var cleanCanvas = function () {
-    //layer.clear();
-    //layer = new Kinetic.Layer();
-    stage.clear();
-   
-};
-
 $(document).ready(function () {
-    $("#paint-box").mousedown(engage);
 
-    $("#paint-box").mousemove(draw);
+    var canvas = document.getElementById('paint-box');
+    var ctx = canvas.getContext('2d');
 
-    $("#paint-box").mouseup(disengage);
+    canvas.width = $('#paint-box').width();
+    canvas.height = $('#paint-box').height();
+
+    (function draw() {
+        var radius = 5;
+        var draggin = false;
+        ctx.lineWidth = radius * 2;
+
+        function putPoint(e) {
+            if (draggin) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.moveTo(e.offsetX, e.offsetY);
+            }
+        }
+
+        var engage = function () {
+            draggin = true;
+        };
+
+        var disengage = function () {
+            draggin = false;
+            ctx.beginPath();
+        };
+
+        canvas.addEventListener('mousedown', engage);
+        canvas.addEventListener('mousemove', putPoint);
+        canvas.addEventListener('mouseup', disengage);
+    }());
+
 
     $('#arrow-top').mousedown(function () {
         $('#top-options').slideToggle(300);
     });
-    $("#reset-button").on('click', cleanCanvas);
-});
 
+    $('#canvas').css('cursor', 'crosshair');
+});
