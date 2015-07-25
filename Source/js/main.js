@@ -1,48 +1,47 @@
-
-var stage = new Kinetic.Stage({
-    container: 'paint-container',
-    width: 1000,
-    height: 550,
-});
-
-var dragging = false;
-
-var draw = function (e) {
-    if (dragging) {
-        var layer = new Kinetic.Layer();
-        var arc = new Kinetic.Circle({
-            fill: 'black',
-            radius: 10,
-            x: e.offsetX || e.clientX,
-            y: e.offsetY || e.clientY,
-        });
-        layer.add(arc);
-        stage.add(layer);
-
-    }
-
-};
-
-var engage = function (e) {
-    dragging = true;
-    draw(e);
-};
-
-var disengage = function (e) {
-    dragging = false;
-};
-
 $(document).ready(function () {
-    $("#paint-container").mousedown(engage);
 
-    $("#paint-container").mousemove(draw);
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
 
-    $("#paint-container").mouseup(disengage);
+    canvas.width = 1000;
+    canvas.height = 700;
+
+    (function draw() {
+        var radius = 5;
+        var draggin = false;
+        ctx.lineWidth = radius * 2;
+
+        function putPoint(e) {
+            if (draggin) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.moveTo(e.offsetX, e.offsetY);
+            }
+        }
+
+        var engage = function () {
+            draggin = true;
+        };
+
+        var disengage = function () {
+            draggin = false;
+            ctx.beginPath();
+        };
+
+        canvas.addEventListener('mousedown', engage);
+        canvas.addEventListener('mousemove', putPoint);
+        canvas.addEventListener('mouseup', disengage);
+    }());
+
 
     $('#arrow-top').mousedown(function () {
         $('#top-options').slideToggle(300);
     });
+
+    $('#canvas').css('cursor', 'crosshair');
 });
-
-
 
