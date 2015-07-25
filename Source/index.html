@@ -1,35 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mary Pickford Paint</title>
-    <link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="lib/kinetic-v5.1.0.js"></script>
-    <script src="lib/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+
+  <title></title>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+  <script src="js/kinetic-v5.1.0.js"></script>
+  <script src="js/jquery-2.1.4.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <button id="arrow-top">COLORS</button>
-    <div id="top-options"></div>
-    <div id="paint-container"></div>
-    <nav>
-        <a href="#" id="menuToggle" title="show menu">
-            <span class="navClosed"><i>show menu</i></span>
-        </a>
-        <a href="#" title="Item 1">Pen</a>
-        <a href="#" title="Item 2">Brush</a>
-        <a href="#" title="Item 3">Rubber</a>
-        <a href="#" title="Item 3">Spray</a>
-        <a href="#" title="Item 3">Bucket</a>
-        <a href="#" title="Item 3">Shapes</a>
-    </nav>
-    <header>
-        <div id="bottom-layer">
-            <button>SAVE</button>
-            <button>LOAD</button>
+  <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Paint</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Credits</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Tools:</span>
+    <nav class="mdl-navigation">
+      <div id="tools" class="mdl-radio-group">
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pencil">
+                <input type="radio" id="pencil" class="mdl-radio__button" name="tools[]" value="1" checked/>
+                <span class="mdl-radio__label">Pencil</span>
+            </label>
+            <br />
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="brush">
+                <input type="radio" id="brush" class="mdl-radio__button" name="tools[]" value="2"/>
+                <span class="mdl-radio__label">Brush</span>
+            </label>
+            <br />
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="wifi3">
+                <input type="radio" id="wifi3" class="mdl-radio__button" name="tools[]" value="3"/>
+                <span class="mdl-radio__label">Circle</span>
+            </label>
+            <br />
         </div>
-    </header>
-    <script src="js/main.js"></script>
-    <script src="js/sideBar.js"></script>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <div class="mdl-shadow--4dp">
+        <div class="mdl-card">
+          <div id="paint-box"></div>
+      </div>
+      </div>     
+    </div>      
+   </div>
+  </main>
+</div>
+<div id="action-button">
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="reset-button">
+    <i class="material-icons">refresh</i>
+  </button>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

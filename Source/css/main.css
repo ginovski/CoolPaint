@@ -1,0 +1,40 @@
+.mdl-shadow--4dp{
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    background: white;
+    width: 80%;
+    height: 80%;
+}
+#paint-box{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}
+.mdl-card{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}
+.mdl-button {
+position: fixed;
+right: 24px;
+bottom: 24px;
+padding-top: 24px;
+margin-bottom: 0;
+z-index: 998;
+}
+.mdl-nav-pills{
+    position: absolute;
+    bottom: 50px;
+    
+}
+#tools {
+    padding-left: 15px;
+}
+.mdl-radio{
+    margin-bottom: 15px;
+    font-size: 18px;
+}
