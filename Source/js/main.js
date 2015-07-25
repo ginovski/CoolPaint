@@ -7,7 +7,7 @@ $(document).ready(function () {
     canvas.height = 700;
 
     (function draw() {
-        var radius = 5;
+        var radius = 2;
         var draggin = false;
         ctx.lineWidth = radius * 2;
 
