@@ -10,6 +10,11 @@ function init(canvas, width, height){
 }
 
 function changeTool(){
+    var selectedToolName = $('.selected').text();
+    var tool = tools[selectedToolName];
+
+    currentTool = tool;
+    updateToolSettings();
 }
 
 function addToolsInTheSidebar(){
@@ -62,4 +67,7 @@ $(document).ready(function(){
     $(canvas).mousedown(onMouseDown);
     $(canvas).mousemove(onMouseMove);
     $(canvas).mouseup(onMouseUp);
+    $('a.selected').click(function(){
+       changeTool();
+    });
 });
