@@ -5,9 +5,6 @@ body {
     font-family: 'Cherry Cream Soda', cursive;
 }
 
-.kineticjs-content {
-}
-
 #paint-container {
     position: absolute;
     top: 55px;
@@ -185,6 +182,13 @@ nav {
             -webkit-transition: width 0.2s;
             transition: width 0.2s;
             width: 0;
+        }
+        nav a.selected:nth-child(n+2):after {
+            background: #ffa53e;
+            content: '';
+            display: block;
+            height: 3px;
+            width: 100%;
         }
 
         nav a:nth-child(n+2):hover:after {

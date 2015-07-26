@@ -9,6 +9,9 @@ function init(canvas, width, height){
     currentTool = brushTool;
 }
 
+function changeTool(){
+}
+
 function updateToolSettings(){
     currentTool.updateToolSettings();
 }

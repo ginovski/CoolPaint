@@ -12,5 +12,12 @@
             }, 100);
             e.preventDefault();
         });
+
+        $('nav a').click(function(){
+            if (!$(this).is('#menuToggle')) {
+                $('.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
     });
 })(jQuery);

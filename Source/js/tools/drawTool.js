@@ -1,4 +1,4 @@
-var brushTool = makeTool('brush', null, brushToolMouseMove, brushToolMouseDown, updateBrushToolSettings);
+var brushTool = makeTool('brushTool', null, brushToolMouseMove, brushToolMouseDown, updateBrushToolSettings);
 
 var radius = 2;
 
