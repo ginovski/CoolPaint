@@ -53,8 +53,6 @@ function onMouseDown() {
     if (currentTool.onMouseDown !== null) {
         currentTool.onMouseDown();
     }
-
-    //logAction(canvas.toDataURL());
 }
 
 function onMouseUp() {
@@ -82,9 +80,14 @@ function onKeyDown(ev){
 
     // TODO: Take out these keys in another file & function
 
-    // If CTRL+z
+    // CTRL + z
     if (eventObject.keyCode == 90 && eventObject.ctrlKey) {
         undoAction();
+    }
+
+    // CTRL + y
+    if (eventObject.keyCode == 89 && eventObject.ctrlKey) {
+        redoAction();
     }
 }
 
