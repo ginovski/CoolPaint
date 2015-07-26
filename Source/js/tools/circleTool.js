@@ -4,7 +4,7 @@
 
     function circleToolUpdateSettings(){
         ctx.strokeStyle = 'black';
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
     }
 
     function circleToolMouseDown(){

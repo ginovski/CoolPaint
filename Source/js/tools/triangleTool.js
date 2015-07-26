@@ -3,7 +3,7 @@
 
     function triangleToolUpdateSettings() {
         ctx.strokeStyle = 'black';
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
     }
 
     function triangleToolMouseDown() {
