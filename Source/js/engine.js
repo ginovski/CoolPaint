@@ -2,7 +2,7 @@ function init(canvas, width, height){
     ctx = canvas.getContext('2d');
 
     canvas.width = 1000;
-    canvas.height = 700;
+    canvas.height = 500;
     $(canvas).css('cursor', 'crosshair');
 
     //Change this to your tool to test it
