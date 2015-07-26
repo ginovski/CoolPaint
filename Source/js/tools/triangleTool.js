@@ -1,10 +1,9 @@
 (function(){
     var triangleTool = makeTool('Triangle', triangleToolMouseDown, null, null, null);
 
-    var tempX = mousePositionX;
-    var tempY = mousePositionY;
-
     function triangleToolMouseDown() {
+        var tempX = mousePositionX;
+        var tempY = mousePositionY;
         ctx.beginPath();
         ctx.moveTo(tempX, tempY);
         ctx.lineTo(tempX + 100, tempY);
@@ -13,4 +12,5 @@
         ctx.fill();
         ctx.stroke();
     }
+    return triangleTool;
 }());
