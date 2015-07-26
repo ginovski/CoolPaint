@@ -6,7 +6,7 @@
     function writeTextOnMouseDown() {
         startX = mousePositionX + 220;
         startY = mousePositionY+15;
-        var input = $("<input type=text id='userInput' />").css({
+        var input = $("<input type=text id='userInput' placeholder='Press enter to apply' />").css({
             "position": "relative",
             "left":startX.toString()+'px',
             "top":startY.toString()+'px',
