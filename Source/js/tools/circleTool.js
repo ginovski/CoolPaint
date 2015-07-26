@@ -8,6 +8,5 @@
         ctx.fill();
         ctx.stroke();
     }
-    return circleTool;
 }());
 

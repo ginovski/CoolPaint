@@ -5,7 +5,7 @@ function init(canvas, width, height){
     canvas.height = 500;
     $(canvas).css('cursor', 'crosshair');
 
-    currentTool = brushTool;
+    currentTool = tools['Brush'];
 }
 
 function changeTool(toolItem){
