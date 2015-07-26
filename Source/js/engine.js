@@ -18,6 +18,9 @@ function addToolsInTheSidebar(){
         var newItem = $('<a href="#"></a>');
         newItem.attr('title', tool.name);
         newItem.text(tool.name);
+        if (index == 'Brush') {
+            newItem.addClass('selected');
+        }
 
         $('nav').append(newItem);
     }
