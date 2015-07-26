@@ -4,6 +4,7 @@ function init(canvas, width, height){
     canvas.width = 1000;
     canvas.height = 700;
 
+    //Change this to your tool to test it
     currentTool = brushTool;
 }
 
