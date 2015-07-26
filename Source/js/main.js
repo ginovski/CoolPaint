@@ -1,25 +1,5 @@
 $(document).ready(function () {
 
-var stage = new Kinetic.Stage({
-    container: 'paint-container',
-    width: 1000,
-    height: 550,
-});
-
-var dragging = false;
-
-var draw = function (e) {
-    if (dragging) {
-        var layer = new Kinetic.Layer();
-        var arc = new Kinetic.Circle({
-            fill: 'black',
-            radius: 10,
-            x: e.offsetX || e.clientX,
-            y: e.offsetY || e.clientY,
-        });
-        layer.add(arc);
-        stage.add(layer);
-    }
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
