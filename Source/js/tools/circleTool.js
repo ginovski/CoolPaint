@@ -1,6 +1,11 @@
 (function(){
-    var circleTool = makeTool('Circle', circleToolMouseDown, null, null, null),
+    var circleTool = makeTool('Circle', circleToolMouseDown, null, null, circleToolUpdateSettings),
         defaultRadius=40;
+
+    function circleToolUpdateSettings(){
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = 'black';
+    }
 
     function circleToolMouseDown(){
         ctx.beginPath();

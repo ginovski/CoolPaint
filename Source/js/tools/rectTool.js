@@ -1,7 +1,12 @@
 (function(){
-    var rectTool = makeTool('Rectangle', rectToolMouseDown, null, null, null);
+    var rectTool = makeTool('Rectangle', rectToolMouseDown, null, null, rectToolUpdateSettings);
     var width = 50;
     var height = 50;
+
+    function rectToolUpdateSettings(){
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = 'black';
+    }
 
     function rectToolMouseDown(){
         ctx.beginPath();

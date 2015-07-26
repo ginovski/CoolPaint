@@ -1,5 +1,11 @@
 (function(){
-    var cloudTool = makeTool('Cloud', cloudToolMouseDown, null, null);
+    var cloudTool = makeTool('Cloud', cloudToolMouseDown, null, cloudToolUpdateSettings);
+
+    function cloudToolUpdateSettings(){
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = 'black';
+    }
+
     function cloudToolMouseDown() {
         var tempX = mousePositionX;
         var tempY = mousePositionY;

@@ -4,6 +4,8 @@
     var radius = 2;
 
     function updateBrushToolSettings() {
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = 'black';
         ctx.lineWidth = radius * 2;
     }
 

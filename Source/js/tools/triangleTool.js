@@ -1,5 +1,10 @@
 (function(){
-    var triangleTool = makeTool('Triangle', triangleToolMouseDown, null, null, null);
+    var triangleTool = makeTool('Triangle', triangleToolMouseDown, null, null, triangleToolUpdateSettings);
+
+    function triangleToolUpdateSettings() {
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = 'black';
+    }
 
     function triangleToolMouseDown() {
         var tempX = mousePositionX;
