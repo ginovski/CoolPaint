@@ -12,5 +12,5 @@
         ctx.fill();
         ctx.stroke();
     }
-    return triangleTool;
+
 }());

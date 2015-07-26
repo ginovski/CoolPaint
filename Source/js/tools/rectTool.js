@@ -9,5 +9,4 @@
         ctx.stroke();
         ctx.fill();
     }
-    return rectTool;
 }());
