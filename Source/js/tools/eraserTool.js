@@ -1,12 +1,12 @@
 (function(){
     var eraserTool = makeTool('Eraser', eraserToolMouseDown, eraserToolToolMouseMove, null, updateEraserToolSettings);
 
-    var width = 10;
-    var height = 10;
+    var radius = 5;
 
     function updateEraserToolSettings() {
         ctx.strokeStyle = 'white';
         ctx.fillStyle = 'white';
+        ctx.lineWidth = radius * 2;
     }
 
     function eraserToolToolMouseMove() {
@@ -14,7 +14,7 @@
             ctx.lineTo(mousePositionX, mousePositionY);
             ctx.stroke();
             ctx.beginPath();
-            ctx.rect(mousePositionX, mousePositionY, width, height);
+            ctx.arc(mousePositionX, mousePositionY, radius, 0, 2 * Math.PI);
             ctx.fill();
             ctx.beginPath();
             ctx.moveTo(mousePositionX, mousePositionY);
