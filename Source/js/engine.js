@@ -13,6 +13,11 @@ function changeTool(toolItem){
     var tool = tools[selectedToolName];
     currentTool = tool;
     updateToolSettings();
+
+    if (tool.name == 'Brush') {
+        $('canvas').mousedown();
+        $('canvas').mouseup();
+    }
 }
 
 function addToolsInTheSidebar(){
