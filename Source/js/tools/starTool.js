@@ -1,5 +1,5 @@
 (function () {
-    var starTool = makeTool('Star', starToolMouseDown, null, null, starToolUpdateSettings);
+    var starTool = makeTool('Star', '', starToolMouseDown, null, null, starToolUpdateSettings);
 
     function starToolUpdateSettings(){
         ctx.strokeStyle = 'black';

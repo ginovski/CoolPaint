@@ -1,5 +1,5 @@
 (function(){
-    var cloudTool = makeTool('Cloud', cloudToolMouseDown, null, null, cloudToolUpdateSettings);
+    var cloudTool = makeTool('Cloud', '', cloudToolMouseDown, null, cloudToolUpdateSettings);
 
     function cloudToolUpdateSettings(){
         ctx.strokeStyle = 'black';

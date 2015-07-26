@@ -1,5 +1,5 @@
 (function(){
-    var eraserTool = makeTool('Eraser', eraserToolMouseDown, eraserToolToolMouseMove, null, updateEraserToolSettings);
+    var eraserTool = makeTool('Eraser', '', eraserToolMouseDown, eraserToolToolMouseMove, null, updateEraserToolSettings);
 
     var radius = 5;
 

@@ -1,5 +1,5 @@
 (function(){
-    var circleTool = makeTool('Circle', circleToolMouseDown, null, null, circleToolUpdateSettings),
+    var circleTool = makeTool('Circle', '', circleToolMouseDown, null, null, circleToolUpdateSettings),
         defaultRadius=40;
 
     function circleToolUpdateSettings(){

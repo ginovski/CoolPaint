@@ -1,5 +1,5 @@
 (function(){
-    var rectTool = makeTool('Rectangle', rectToolMouseDown, null, null, rectToolUpdateSettings);
+    var rectTool = makeTool('Rectangle', '', rectToolMouseDown, null, null, rectToolUpdateSettings);
     var width = 50;
     var height = 50;
 

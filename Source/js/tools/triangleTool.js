@@ -1,5 +1,5 @@
 (function(){
-    var triangleTool = makeTool('Triangle', triangleToolMouseDown, null, null, triangleToolUpdateSettings);
+    var triangleTool = makeTool('Triangle', '', triangleToolMouseDown, null, null, triangleToolUpdateSettings);
 
     function triangleToolUpdateSettings() {
         ctx.strokeStyle = 'black';

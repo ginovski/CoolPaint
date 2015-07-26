@@ -1,5 +1,5 @@
 (function () {
-    var circleTool = makeTool('Ellipse', handleMouseDown, null, handleMouseUp, updateBrushToolSettings),
+    var circleTool = makeTool('Ellipse', '', handleMouseDown, null, handleMouseUp, updateBrushToolSettings),
         startX,
         startY;
 

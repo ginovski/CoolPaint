@@ -1,5 +1,6 @@
 (function(){
-    var brushTool = makeTool('Brush', brushToolMouseDown, brushToolMouseMove, null, updateBrushToolSettings);
+    var brushCursor = 'img/toolIcons/brush.png';
+    var brushTool = makeTool('Brush', brushCursor, brushToolMouseDown, brushToolMouseMove, null, updateBrushToolSettings);
 
     var radius = 2;
 

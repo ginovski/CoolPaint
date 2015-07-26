@@ -8,15 +8,20 @@ var currentTool;
 
 var tools = {};
 
-var makeTool = function(name, onMouseDown, onMouseMove, onMouseUp, updateToolSettings){
-        var newTool =  {
-            name: name,
-            onMouseDown: onMouseDown,
-            onMouseMove: onMouseMove,
-            onMouseUp: onMouseUp,
-            updateToolSettings: updateToolSettings
-        };
-        tools[newTool.name] = newTool;
-        return newTool;
+var makeTool = function (name, cursor, onMouseDown, onMouseMove, onMouseUp, updateToolSettings) {
+    'use strict';
+
+    var newTool = {
+        name: name,
+        cursor: cursor,
+        onMouseDown: onMouseDown,
+        onMouseMove: onMouseMove,
+        onMouseUp: onMouseUp,
+        updateToolSettings: updateToolSettings
     };
+
+    tools[newTool.name] = newTool;
+
+    return newTool;
+};
 
