@@ -43,5 +43,36 @@ $(document).ready(function () {
     });
 
     $('#canvas').css('cursor', 'crosshair');
+
+    var shapes = (function () {
+        var shapes = {
+            rect: new Kinetic.Rect({
+                x: 100,
+                y: 100,
+                width: 50,
+                height: 50,
+                fill: 'black'
+            }),
+            circle: new Kinetic.Circle({
+                x: 100,
+                y: 100,
+                width: 50,
+                height: 50,
+                fill: 'black'
+            }),
+            triangle: new Kinetic.Shape({
+                sceneFunc: function (context) {
+                    context.beginPath();
+                    context.moveTo(200, 50);
+                    context.lineTo(420, 80);
+                    context.quadraticCurveTo(300, 100, 260, 170);
+                    context.closePath();
+                    context.fillStrokeShape(this);
+                },
+                fill: 'black'
+            })
+        };
+        return shapes;
+    }());
 });
 
