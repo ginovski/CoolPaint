@@ -1,6 +1,7 @@
 var ctx;
 
 var mouseClicked;
+var keyPressed;
 var mousePositionX;
 var mousePositionY;
 
@@ -24,4 +25,3 @@ var makeTool = function (name, cursor, onMouseDown, onMouseMove, onMouseUp, upda
 
     return newTool;
 };
-

@@ -53,6 +53,9 @@ function onMouseDown() {
     if (currentTool.onMouseDown !== null) {
         currentTool.onMouseDown();
     }
+
+    var currentCanvasImage = canvas.toDataURL();
+    logAction(currentCanvasImage);
 }
 
 function onMouseUp() {
@@ -60,6 +63,9 @@ function onMouseUp() {
     if (currentTool.onMouseUp !== null) {
         currentTool.onMouseUp();
     }
+
+    var currentCanvasImage = canvas.toDataURL();
+    logAction(currentCanvasImage);
 }
 
 function onMouseMove(event) {
@@ -71,8 +77,24 @@ function onMouseMove(event) {
     }
 }
 
+function onKeyDown(ev){
+    keyPressed = true;
+
+    var eventObject = window.event? event : ev;
+
+    // TODO: Take out these keys in another file & function
+
+    // If CTRL+z
+    if (eventObject.keyCode == 90 && eventObject.ctrlKey) {
+        undoAction();
+    }
+}
+
 function clearCurrentLayer() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // TODO: Take out this in another function
+    localStorage.removeItem('actions');
 }
 
 $(document).ready(function () {
@@ -85,6 +107,8 @@ $(document).ready(function () {
     $(canvas).mousedown(onMouseDown);
     $(canvas).mousemove(onMouseMove);
     $(canvas).mouseup(onMouseUp);
+
+    $(document).keydown(onKeyDown);
 
     $('nav a').click(function () {
         if (!$(this).is('#menuToggle')) {
