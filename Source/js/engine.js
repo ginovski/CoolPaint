@@ -8,10 +8,9 @@ function init(canvas, width, height){
     currentTool = brushTool;
 }
 
-function changeTool(){
-    var selectedToolName = $('.selected').text();
+function changeTool(toolItem){
+    var selectedToolName = $(toolItem).text();
     var tool = tools[selectedToolName];
-
     currentTool = tool;
     updateToolSettings();
 }
@@ -31,7 +30,9 @@ function addToolsInTheSidebar(){
 }
 
 function updateToolSettings(){
-    currentTool.updateToolSettings();
+    if (currentTool.updateToolSettings !== null) {
+        currentTool.updateToolSettings();
+    }
 }
 
 function onMouseDown(){
@@ -66,7 +67,10 @@ $(document).ready(function(){
     $(canvas).mousedown(onMouseDown);
     $(canvas).mousemove(onMouseMove);
     $(canvas).mouseup(onMouseUp);
-    $('a.selected').click(function(){
-       changeTool();
+    $('nav a').click(function(){
+        if (!$(this).is('#menuToggle')) {
+            var tool = this;
+            changeTool(tool);
+        }
     });
 });
