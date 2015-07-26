@@ -226,6 +226,14 @@ nav {
             width: 0;
         }
 
+        nav a.selected:nth-child(n+2):after {
+            background: #ffa53e;
+            content: '';
+            display: block;
+            height: 3px;
+            width: 100%;
+        }
+
         nav a:nth-child(n+2):hover:after {
             width: 100%;
         }
