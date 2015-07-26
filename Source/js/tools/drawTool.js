@@ -1,7 +1,8 @@
-var brushTool = makeTool('brush', null, brushToolMouseMove, brushToolMouseDown, updateToolSettings);
+var brushTool = makeTool('brush', null, brushToolMouseMove, brushToolMouseDown, updateBrushToolSettings);
+
 var radius = 2;
 
-function updateToolSettings() {
+function updateBrushToolSettings() {
     ctx.lineWidth = radius * 2;
 }
 
