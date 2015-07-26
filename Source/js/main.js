@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-<<<<<<< HEAD
 var stage = new Kinetic.Stage({
     container: 'paint-container',
     width: 1000,
@@ -21,13 +20,11 @@ var draw = function (e) {
         layer.add(arc);
         stage.add(layer);
     }
-=======
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
     canvas.width = 1000;
     canvas.height = 700;
->>>>>>> 215d46719c5d9b5028e18ee363986adc50b46f3a
 
     (function draw() {
         var radius = 2;
