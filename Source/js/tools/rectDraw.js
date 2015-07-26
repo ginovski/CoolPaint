@@ -1,4 +1,4 @@
-var rectTool = makeTool('Rectangle', null, null, rectToolMouseDown, null);
+var rectTool = makeTool('Rectangle', rectToolMouseDown, null, null, null);
 var width = 50;
 var height = 50;
 
