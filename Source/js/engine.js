@@ -54,8 +54,7 @@ function onMouseDown() {
         currentTool.onMouseDown();
     }
 
-    var currentCanvasImage = canvas.toDataURL();
-    logAction(currentCanvasImage);
+    //logAction(canvas.toDataURL());
 }
 
 function onMouseUp() {
@@ -64,8 +63,7 @@ function onMouseUp() {
         currentTool.onMouseUp();
     }
 
-    var currentCanvasImage = canvas.toDataURL();
-    logAction(currentCanvasImage);
+    logAction(canvas.toDataURL());
 }
 
 function onMouseMove(event) {
