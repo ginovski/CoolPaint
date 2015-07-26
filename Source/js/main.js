@@ -46,31 +46,39 @@ $(document).ready(function () {
 
     var shapes = (function () {
         var shapes = {
-            rect: new Kinetic.Rect({
-                x: 100,
-                y: 100,
-                width: 50,
-                height: 50,
-                fill: 'black'
-            }),
-            circle: new Kinetic.Circle({
-                x: 100,
-                y: 100,
-                width: 50,
-                height: 50,
-                fill: 'black'
-            }),
-            triangle: new Kinetic.Shape({
-                sceneFunc: function (context) {
-                    context.beginPath();
-                    context.moveTo(200, 50);
-                    context.lineTo(420, 80);
-                    context.quadraticCurveTo(300, 100, 260, 170);
-                    context.closePath();
-                    context.fillStrokeShape(this);
-                },
-                fill: 'black'
-            })
+            rect: function (x, y, width, heigth) {
+                var rectangle = new Kinetic.Rect({
+                    x: x,
+                    y: y,
+                    width: width,
+                    height: heigth,
+                    fill: 'black'
+                });
+                return rectangle;
+            },
+            circle: function (x, y, radius) {
+                var circle = new Kinetic.Circle({
+                    x: x,
+                    y: y,
+                    radius: radius,
+                    fill: 'black'
+                });
+                return circle;
+            },
+            triangle: function (x1, y1, x2, y2, x3, y3) {
+                var triangle = new Kinetic.Shape({
+                    sceneFunc: function (context) {
+                        context.beginPath();
+                        context.moveTo(x1, y1);
+                        context.lineTo(x2, y2);
+                        context.lineTo(x3, y3);
+                        context.closePath();
+                        context.fillStrokeShape(this);
+                    },
+                    fill: 'black'
+                });
+                return new triangle;
+            }
         };
         return shapes;
     }());
