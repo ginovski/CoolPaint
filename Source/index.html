@@ -19,6 +19,7 @@
         <button>+</button>
         <button>-</button>
     </span>
+	<button id="clear">CLEAR</button>
     <nav>
         <a href="#" id="menuToggle" title="show menu">
             <span class="navClosed"><i>show menu</i></span>
@@ -26,9 +27,13 @@
     </nav>
     <header>
         <div id="bottom-layer">
-            <button>SAVE</button>
-            <button>LOAD</button>
+            <button id="save">SAVE</button>
+            <button id="load">LOAD</button>
         </div>
+		<form id="load-pic">
+            <input type="url" placeholder="URL" id="url">
+            <input type="button" value="Submit" id="submit">
+        </form>
     </header>
     <script src="js/main.js"></script>
     <script src="js/engine.js"></script>
@@ -38,10 +43,12 @@
     <script src="js/tools/rectTool.js"></script>
     <script src="js/tools/triangleTool.js"></script>
     <script src="js/tools/circleTool.js"></script>
+	<script src="js/tools/loadImage.js"></script>
 
 
     <!-- Add scripts for the ui here-->
     <script src="js/ui-components/sideBar.js"></script>
     <script src="js/ui-components/colorsSlider.js"></script>
+	<script src="js/ui-components/load.js"></script>
 </body>
 </html>
