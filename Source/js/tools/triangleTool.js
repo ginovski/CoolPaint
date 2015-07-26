@@ -1,8 +1,9 @@
-var triangleTool = makeTool('Triangle', null, triangleToolMouseDown, null, null);
+var triangleTool = makeTool('Triangle', null, null, triangleToolMouseDown, null);
 
-var tempX = mousePositionX;
-var tempY = mousePositionY;
+
 function triangleToolMouseDown() {
+    var tempX = mousePositionX;
+    var tempY = mousePositionY;
     ctx.beginPath();
     ctx.moveTo(tempX, tempY);
     ctx.lineTo(tempX + 100, tempY);
