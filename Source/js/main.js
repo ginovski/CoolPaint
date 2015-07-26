@@ -18,7 +18,6 @@ var draw = function (e) {
         });
         layer.add(arc);
         stage.add(layer);
-
     }
 
 };
