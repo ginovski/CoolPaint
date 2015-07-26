@@ -1,8 +1,8 @@
 function init(canvas, width, height){
     ctx = canvas.getContext('2d');
 
-    canvas.width = 1000;
-    canvas.height = 500;
+    canvas.width = width;
+    canvas.height = height;
     $(canvas).css('cursor', 'crosshair');
 
     currentTool = brushTool;
@@ -58,9 +58,13 @@ function onMouseMove(event){
     }
 }
 
+function clearCurrentLayer() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 $(document).ready(function(){
     var canvas = document.getElementById('canvas');
-    init(canvas, 1000, 700);
+    init(canvas, 1000, 500);
     updateToolSettings();
     addToolsInTheSidebar();
 
@@ -73,4 +77,6 @@ $(document).ready(function(){
             changeTool(tool);
         }
     });
+	$('#clear').click(clearCurrentLayer);
+	$('#submit').click(insertImage);
 });
