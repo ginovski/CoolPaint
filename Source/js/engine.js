@@ -12,6 +12,17 @@ function init(canvas, width, height){
 function changeTool(){
 }
 
+function addToolsInTheSidebar(){
+    for (var index in tools) {
+        var tool = tools[index];
+        var newItem = $('<a href="#"></a>');
+        newItem.attr('title', tool.name);
+        newItem.text(tool.name);
+
+        $('nav').append(newItem);
+    }
+}
+
 function updateToolSettings(){
     currentTool.updateToolSettings();
 }
@@ -43,6 +54,7 @@ $(document).ready(function(){
     var canvas = document.getElementById('canvas');
     init(canvas, 1000, 700);
     updateToolSettings();
+    addToolsInTheSidebar();
 
     $(canvas).mousedown(onMouseDown);
     $(canvas).mousemove(onMouseMove);

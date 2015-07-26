@@ -17,7 +17,6 @@ var makeTool = function(name, onMouseDown, onMouseMove, onMouseUp, updateToolSet
             updateToolSettings: updateToolSettings
         };
         tools[newTool.name] = newTool;
-
         return newTool;
     };
 
