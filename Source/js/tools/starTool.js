@@ -24,5 +24,6 @@
         ctx.lineTo(tempX + scale * 0.5, tempY + scale);
         ctx.lineTo(tempX, tempY);
         ctx.stroke();
+        ctx.fill();
     }
 }());

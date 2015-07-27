@@ -3,7 +3,7 @@
 
     function cloudToolUpdateSettings(){
         ctx.strokeStyle = 'black';
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
     }
 
     function cloudToolMouseDown() {
@@ -18,6 +18,7 @@
         ctx.bezierCurveTo(tempX + 150, tempY - 75, tempX + 80, tempY - 60, tempX + 80, tempY - 30);
         ctx.bezierCurveTo(tempX + 30, tempY - 75, tempX - 20, tempY - 60, tempX, tempY);
         ctx.closePath();
+        ctx.fill();
         ctx.stroke();
     }
 }());

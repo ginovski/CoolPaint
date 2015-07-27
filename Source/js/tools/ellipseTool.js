@@ -5,7 +5,7 @@
 
     function updateBrushToolSettings() {
         ctx.strokeStyle = 'black';
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
     }
 
     function drawEllipse(x, y) {
@@ -13,6 +13,7 @@
         ctx.moveTo(startX, startY + (y - startY) / 2);
         ctx.bezierCurveTo(startX, startY, x, startY, x, startY + (y - startY) / 2);
         ctx.bezierCurveTo(x, y, startX, y, startX, startY + (y - startY) / 2);
+        ctx.fill();
         ctx.stroke();
     }
 
