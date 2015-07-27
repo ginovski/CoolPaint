@@ -5,12 +5,12 @@
 
     function writeTextOnMouseDown() {
         startX = mousePositionX + 220;
-        startY = mousePositionY+15;
+        startY = mousePositionY+40;
         var input = $("<input type=text id='userInput' placeholder='Press enter to apply' />").css({
-            "position": "relative",
+            "position": "absolute",
             "left":startX.toString()+'px',
             "top":startY.toString()+'px',
-            "z-index": 2,
+            "z-index": 20,
             "filter":"alpha(opacity=50)",
             "opacity": "0.5",
 			"width": "130px",
