@@ -5,12 +5,15 @@
     <title>Mary Pickford Paint</title>
     <link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet" />
-    <script src="lib/kinetic-v5.1.0.js"></script>
+    <link href="css/colorpicker.css" rel="stylesheet" />
     <script src="lib/jquery-2.1.4.js"></script>
+    <script src="lib/colorpicker.js"></script>
 </head>
 <body>
     <button id="arrow-top">COLORS</button>
-    <div id="top-options"></div>
+    <div id="top-options">
+        <input type="text" id="colorPicker"/>Select color...
+    </div>
     <div id="paint-container">
         <canvas id="canvas"></canvas>
     </div>
