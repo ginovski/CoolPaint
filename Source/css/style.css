@@ -8,6 +8,7 @@ body {
 .kineticjs-content {
 }
 
+
 #paint-container {
     position: absolute;
     top: 55px;
@@ -45,13 +46,80 @@ body {
     height: 530px;
     width: 180px;
     margin-left: 15px;
-    opacity: 0.6;
+    opacity: 0.9;
     border: 5px ridge gray;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
     background-color: #868686;
     display: none;
+}
+
+#color-picker {
+    position: relative;
+    margin: 10px;
+}
+
+#red, #green, #blue {
+    width: 130px;
+    height: 10px;
+    margin: 20px;
+}
+
+#swatch {
+    margin-left: 18px;
+    width: 120px;
+    height: 90px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 3px ridge #c6c6c6;
+    background-image: none;
+}
+
+#colors {
+    margin-top: 10px;
+    width: 170px;
+    height: 300px;
+}
+
+.color {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px ridge #c6c6c6;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    margin: 5px 2px;
+    -moz-box-shadow: inset 0px 2px 1px rgba(255,255,255,0.5), 0px,2px,2px, rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px 2px 1px rgba(255,255,255,0.5), 0px,2px,2px, rgba(0,0,0,0.5);
+    box-shadow: inset 0px 2px 1px rgba(255,255,255,0.5), 0px,2px,2px, rgba(0,0,0,0.5);
+}
+
+
+#red .ui-slider-range {
+    background: #ef2929;
+}
+
+#red .ui-slider-handle {
+    border-color: #ef2929;
+}
+
+#green .ui-slider-range {
+    background: #8ae234;
+}
+
+#green .ui-slider-handle {
+    border-color: #8ae234;
+}
+
+#blue .ui-slider-range {
+    background: #729fcf;
+}
+
+#blue .ui-slider-handle {
+    border-color: #729fcf;
 }
 
 #radius {
@@ -132,8 +200,9 @@ form #url {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
+
 form #submit {
-    background-color:#c6c6c6;
+    background-color: #c6c6c6;
     font-family: 'Cherry Cream Soda', cursive;
     color: black;
     font-weight: bold;
@@ -224,14 +293,6 @@ nav {
             -webkit-transition: width 0.2s;
             transition: width 0.2s;
             width: 0;
-        }
-
-        nav a.selected:nth-child(n+2):after {
-            background: #ffa53e;
-            content: '';
-            display: block;
-            height: 3px;
-            width: 100%;
         }
 
         nav a:nth-child(n+2):hover:after {
