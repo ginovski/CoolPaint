@@ -2,7 +2,7 @@
     var brushCursor = 'img/toolIcons/brush.png';
     var brushTool = makeTool('Brush', brushCursor, brushToolMouseDown, brushToolMouseMove, null, updateBrushToolSettings);
 
-    var radius = 2;
+    var radius = 5;
 
     function updateBrushToolSettings() {
         ctx.strokeStyle = 'black';

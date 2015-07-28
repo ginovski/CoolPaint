@@ -14,7 +14,7 @@ function setColor(color) {
 
 }
 
-var colors = ['black', 'grey', 'white', 'red', 'orange', 'yellow', 'yellowgreen', 'cyan', 'green', 'blue', 'violet', 'indigo'];
+var colors = ['black', 'grey','silver', 'white', 'darkred','crimson','red','tomato','orangered', 'orange','gold', 'yellow', 'darkgreen', 'green', 'lime', 'greenyellow', 'navy', 'blue','royalblue','skyblue','indigo','magenta', 'hotpink', 'aqua'];
 for (var i = 0, n = colors.length ;i < n; i+=1) {
     var swatch = document.createElement('div');
     swatch.className = 'color';
