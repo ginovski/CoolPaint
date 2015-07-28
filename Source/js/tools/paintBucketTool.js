@@ -1,41 +1,45 @@
 (function () {
     var bucketTool = makeTool('Bucket', '', bucketToolMouseDown, null, null, null);
 
-    function bucketToolUpdateSettings(r,g,b){
+    function bucketToolUpdateSettings(r, g, b) {
         var colorGreen = {
             r: 101,
             g: 155,
             b: 65
         };
     }
+
     function bucketToolMouseDown() {
-        var canvas = $('#canvas');
-        var width = canvas.width();
-        var height = canvas.height();
-        var colorLayer = ctx.getImageData(0, 0, width, height);
-        var startColors = ctx.getImageData(mousePositionX, mousePositionY, 1, 1);
-        var drawingAreaX = 0,
+        var canvas = $('#canvas'),
+            selectedColor = $('#swatch'),
+            width = canvas.width(),
+            height = canvas.height(),
+            colorLayer = ctx.getImageData(0, 0, width, height),
+            startColors = ctx.getImageData(mousePositionX, mousePositionY, 1, 1),
+            drawingAreaX = 0,
             drawingAreaY = 0,
             drawingAreaWidth = width,
             drawingAreaHeight = height,
-            colorGreen = {
-                r: 101,
-                g: 155,
-                b: 65
+            colors = getColors(selectedColor.css('background-color')),
+            desiredColor = {
+                r: colors.red,
+                g: colors.green,
+                b: colors.blue
             };
-        alterColors(mousePositionX,mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2], 255);
+
+        alterColors(mousePositionX, mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2], 255);
         function alterColors(startX, startY, startR, startG, startB) {
 
-            if(startR === colorGreen.r &&
-                startG === colorGreen.g &&
-                startB === colorGreen.b){
+            if (startR === desiredColor.r &&
+                startG === desiredColor.g &&
+                startB === desiredColor.b) {
                 return;
             }
 
             var newPos,
                 x,
                 y,
-                curColor = colorGreen,
+                curColor = desiredColor,
                 pixelPos,
                 reachLeft,
                 reachRight,
@@ -116,7 +120,15 @@
             }
 
             ctx.putImageData(colorLayer, 0, 0);
-
+        }
+        function getColors(rgb) {
+            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            var colors = {
+                red: parseInt(rgb[1]),
+                green: parseInt(rgb[2]),
+                blue: parseInt(rgb[3])
+            };
+            return colors;
         }
     }
 }());
