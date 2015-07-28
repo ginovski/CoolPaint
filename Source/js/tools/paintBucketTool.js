@@ -1,6 +1,13 @@
 (function () {
     var bucketTool = makeTool('Bucket', '', bucketToolMouseDown, null, null, null);
 
+    function bucketToolUpdateSettings(r,g,b){
+        var colorGreen = {
+            r: 101,
+            g: 155,
+            b: 65
+        };
+    }
     function bucketToolMouseDown() {
         var canvas = $('#canvas');
         var width = canvas.width();
@@ -19,7 +26,11 @@
         alterColors(mousePositionX,mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2], 255);
         function alterColors(startX, startY, startR, startG, startB) {
 
-            pixelStack = [[startX, startY]];
+            if(startR === colorGreen.r &&
+                startG === colorGreen.g &&
+                startB === colorGreen.b){
+                return;
+            }
 
             var newPos,
                 x,
