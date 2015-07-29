@@ -2,9 +2,14 @@
 
 function init(canvas, width, height) {
     ctx = canvas.getContext('2d');
-
     canvas.width = width;
     canvas.height = height;
+
+    //Fixes issue with paint bucket drawing over black
+    //initial color on the canvas is (0,0,0)...
+    ctx.rect(0, 0, width, height);
+    ctx.fillStyle = 'white';
+    ctx.fill();
     $(canvas).css('cursor', 'crosshair');
 
     currentTool = tools['Brush'];

@@ -20,7 +20,7 @@
             drawingAreaY = 0,
             drawingAreaWidth = width,
             drawingAreaHeight = height,
-            colors = getColors(selectedColor.css('background-color')),
+            colors = getColors(ctx.fillStyle),
             desiredColor = {
                 r: colors.red,
                 g: colors.green,
@@ -122,11 +122,11 @@
             ctx.putImageData(colorLayer, 0, 0);
         }
         function getColors(rgb) {
-            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(rgb);
             var colors = {
-                red: parseInt(rgb[1]),
-                green: parseInt(rgb[2]),
-                blue: parseInt(rgb[3])
+                red: parseInt(rgb[1], 16),
+                green: parseInt(rgb[2], 16),
+                blue: parseInt(rgb[3], 16)
             };
             return colors;
         }
