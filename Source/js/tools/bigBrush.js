@@ -1,5 +1,5 @@
 (function () {
-    var sprayCanTool = makeTool('Spray can', '', applySprayOnMouseDown, null, null, null);
+    var sprayCanTool = makeTool('Big Brush', '', applySprayOnMouseDown, null, null, null);
 
     function applySprayOnMouseDown() {
         if(mouseClicked){
@@ -13,12 +13,12 @@
             centerY = mousePositionY,
             x,
             y,
-            density = ctx.lineWidth * 3;
+            density = 40;
 
         for (var i = 0; i < density; i += 1) {
             x = centerX + getRandomSprayPattern(20);
             y = centerY + getRandomSprayPattern(20);
-            ctx.fillRect(x, y, 1, 1);
+            ctx.fillRect(x, y, ctx.lineWidth * 2, 1);
         }
     }
 
