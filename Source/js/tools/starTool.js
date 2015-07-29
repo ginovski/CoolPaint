@@ -6,7 +6,7 @@
         //ctx.fillStyle ='white';
     }
     function starToolMouseDown() {
-        var scale = 30;
+        var scale = 50;
         var tempX = mousePositionX;
         var tempY = mousePositionY;
         ctx.beginPath();
@@ -14,7 +14,7 @@
         ctx.lineTo(tempX + scale, tempY);
         ctx.lineTo(tempX + scale * 1.5, tempY - scale);
         ctx.lineTo(tempX + scale * 2, tempY);
-        ctx.lineTo(tempX + scale * 2 + scale, tempY);
+        ctx.lineTo(tempX + scale * 3, tempY);
         ctx.lineTo(tempX + scale * 2.5, tempY + scale);
         ctx.lineTo(tempX + scale * 3, tempY + scale * 2);
         ctx.lineTo(tempX + scale * 2, tempY + scale * 2);
@@ -24,6 +24,6 @@
         ctx.lineTo(tempX + scale * 0.5, tempY + scale);
         ctx.lineTo(tempX, tempY);
         ctx.stroke();
-        ctx.fill();
+
     }
 }());
