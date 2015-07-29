@@ -1,7 +1,7 @@
 ﻿var radVal = document.getElementById('rad-value'),
     increase = document.getElementById('plus'),
     decrease = document.getElementById('minus'),
-    interval = 4;
+    interval = 3;
 
 increase.addEventListener('click', function () {
     radVal.innerHTML = ctx.lineWidth;
