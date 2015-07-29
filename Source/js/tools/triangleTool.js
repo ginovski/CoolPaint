@@ -2,7 +2,7 @@
     var triangleTool = makeTool('Triangle', '', triangleToolMouseDown, null, null, triangleToolUpdateSettings);
 
     function triangleToolUpdateSettings() {
-        ctx.strokeStyle = 'black';
+        //ctx.strokeStyle = 'black';
         //ctx.fillStyle = 'white';
     }
 
