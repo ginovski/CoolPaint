@@ -1,14 +1,6 @@
 (function () {
     var bucketTool = makeTool('Bucket', '', bucketToolMouseDown, null, null, null);
 
-    function bucketToolUpdateSettings(r, g, b) {
-        var colorGreen = {
-            r: 101,
-            g: 155,
-            b: 65
-        };
-    }
-
     function bucketToolMouseDown() {
         var canvas = $('#canvas'),
             selectedColor = $('#swatch'),
@@ -25,28 +17,30 @@
                 r: colors.red,
                 g: colors.green,
                 b: colors.blue
-            };
+            },
+            // Changing this makes smoother borders
+            //It also affects coloring(wont apply if colors are very similar);
+            tolerance = 80;
 
         alterColors(mousePositionX, mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2], 255);
         function alterColors(startX, startY, startR, startG, startB) {
 
-            if (startR === desiredColor.r &&
-                startG === desiredColor.g &&
-                startB === desiredColor.b) {
+            if ((desiredColor.r - tolerance <= startR && desiredColor.r + tolerance >= startR) &&
+                (desiredColor.g - tolerance <= startG && desiredColor.g + tolerance >= startG) &&
+                (desiredColor.b - tolerance <= startB && desiredColor.b + tolerance >= startB)) {
                 return;
             }
 
             var newPos,
                 x,
                 y,
-                curColor = desiredColor,
                 pixelPos,
                 reachLeft,
                 reachRight,
                 drawingBoundLeft = drawingAreaX,
                 drawingBoundTop = drawingAreaY,
-                drawingBoundRight = drawingAreaX + drawingAreaWidth - 1,
-                drawingBoundBottom = drawingAreaY + drawingAreaHeight - 1,
+                drawingBoundRight = drawingAreaX + width - 1,
+                drawingBoundBottom = drawingAreaY + height - 1,
                 pixelStack = [[startX, startY]];
 
             while (pixelStack.length) {
@@ -73,7 +67,7 @@
                 while (y <= drawingBoundBottom && matchStartColor(pixelPos, startR, startG, startB)) {
                     y += 1;
 
-                    colorPixel(pixelPos, curColor.r, curColor.g, curColor.b);
+                    colorPixel(pixelPos, desiredColor.r, desiredColor.g, desiredColor.b);
 
                     if (x > drawingBoundLeft) {
                         if (matchStartColor(pixelPos - 4, startR, startG, startB)) {
@@ -108,8 +102,14 @@
                 var r = colorLayer.data[pixelPos];
                 var g = colorLayer.data[pixelPos + 1];
                 var b = colorLayer.data[pixelPos + 2];
+                if ((r - tolerance <= startR && r + tolerance >= startR) &&
+                    (g - tolerance <= startG && g + tolerance >= startG) &&
+                    (b - tolerance <= startB && b + tolerance >= startB)) {
+                    return true;
+                } else {
+                    return false;
+                }
 
-                return (r === startR && g === startG && b === startB);
             }
 
             function colorPixel(pixelPos, r, g, b, a) {
@@ -121,6 +121,7 @@
 
             ctx.putImageData(colorLayer, 0, 0);
         }
+
         function getColors(rgb) {
             rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(rgb);
             var colors = {
