@@ -23,9 +23,9 @@
     }
 
     $(document).keypress(function(e){
-        if(e.which == 13){
+        if(e.which === 13){
             var element = $('#userInput');
-			ctx.font = "25px Cherry Cream Soda";
+			ctx.font = "30px Cherry Cream Soda";
             ctx.fillText(element.val(), element.position().left - 220, element.position().top-45);
             element.remove();
         }

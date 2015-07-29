@@ -4,13 +4,12 @@
     var height = 50;
 
     function rectToolUpdateSettings(){
-        ctx.strokeStyle = 'black';
-        ctx.fillStyle = 'white';
+        //ctx.strokeStyle = 'black';
     }
 
     function rectToolMouseDown(){
         ctx.beginPath();
-        ctx.rect(mousePositionX -width/2,mousePositionY-height/2,width,height);
+        ctx.rect(mousePositionX - width / 2, mousePositionY - height / 2, ctx.lineWidth * 3, ctx.lineWidth * 3);
         ctx.stroke();
         ctx.fill();
     }

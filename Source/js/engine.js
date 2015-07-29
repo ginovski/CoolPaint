@@ -5,6 +5,8 @@ function init(canvas, width, height) {
     canvas.width = width;
     canvas.height = height;
 
+    ctx.lineWidth = 13;
+
     //Fixes issue with paint bucket drawing over black
     //initial color on the canvas is (0,0,0)...
     ctx.rect(0, 0, width, height);
@@ -86,12 +88,12 @@ function onKeyDown(ev){
     // TODO: Take out these keys in another file & function
 
     // CTRL + z
-    if (eventObject.keyCode == 90 && eventObject.ctrlKey) {
+    if (eventObject.keyCode === 90 && eventObject.ctrlKey) {
         undoAction();
     }
 
     // CTRL + y
-    if (eventObject.keyCode == 89 && eventObject.ctrlKey) {
+    if (eventObject.keyCode === 89 && eventObject.ctrlKey) {
         redoAction();
     }
 }
@@ -124,5 +126,8 @@ $(document).ready(function () {
     });
 
     $('#clear').click(clearCurrentLayer);
+
     $('#submit').click(insertImage);
+
+    //$('#rad-value').html(ctx.lineWidth);
 });

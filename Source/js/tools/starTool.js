@@ -2,11 +2,11 @@
     var starTool = makeTool('Star', '', starToolMouseDown, null, null, starToolUpdateSettings);
 
     function starToolUpdateSettings(){
-        ctx.strokeStyle = 'black';
-        ctx.fillStyle ='white';
+        //ctx.strokeStyle = 'black';
+        //ctx.fillStyle ='white';
     }
     function starToolMouseDown() {
-        var scale = 50;
+        var scale = 30;
         var tempX = mousePositionX;
         var tempY = mousePositionY;
         ctx.beginPath();

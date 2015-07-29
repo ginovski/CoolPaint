@@ -8,6 +8,11 @@ body {
 .kineticjs-content {
 }
 
+#rad-value{
+    color:orange;
+    font-family: 'Cherry Cream Soda', cursive;
+    font-weight:bold;
+}
 
 #paint-container {
     position: absolute;

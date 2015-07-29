@@ -1,7 +1,4 @@
-﻿var swatch = document.getElementById('swatch');
-swatch.addEventListener('click', setSwatch);
-
-function setSwatch(e) {
+﻿function setSwatch(e) {
     var swatch = e.target;
 
     setColor(swatch.style.backgroundColor);
@@ -22,3 +19,6 @@ for (var i = 0, n = colors.length ;i < n; i+=1) {
     swatch.addEventListener('click', setSwatch);
     document.getElementById('colors').appendChild(swatch);
 }
+
+var swatch = document.getElementById('swatch');
+swatch.addEventListener('click', setSwatch);

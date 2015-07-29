@@ -109,7 +109,7 @@
                 var g = colorLayer.data[pixelPos + 1];
                 var b = colorLayer.data[pixelPos + 2];
 
-                return (r == startR && g == startG && b == startB);
+                return (r === startR && g === startG && b === startB);
             }
 
             function colorPixel(pixelPos, r, g, b, a) {
