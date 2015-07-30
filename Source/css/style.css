@@ -127,7 +127,7 @@ body {
 }
 
 #red .ui-slider-handle {
-    border-color: #ef2929;
+       border-color: #ef2929;
 }
 
 #green .ui-slider-range {
@@ -186,7 +186,7 @@ body {
     background-image: url(../img/button-colors.jpg);
 }
 
-    #bottom-layer button, a {
+    #bottom-layer button, #save {
         font-family: 'Cherry Cream Soda', cursive;
         color: black;
         font-weight: bold;
