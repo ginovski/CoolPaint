@@ -2,10 +2,11 @@
     var bucketCursor = 'img/toolIcons/bucket.png';
     var bucketTool = makeTool('Bucket', bucketCursor, bucketToolMouseDown, null, null, updateBucketToolSettings);
 
-    function updateBucketToolSettings(){
+    function updateBucketToolSettings() {
         ctx.strokeStyle = swatch.style.backgroundColor;
         ctx.fillStyle = swatch.style.backgroundColor;
     }
+
     function bucketToolMouseDown() {
         var canvas = $('#canvas'),
             selectedColor = $('#swatch'),
@@ -21,14 +22,15 @@
             desiredColor = {
                 r: colors.red,
                 g: colors.green,
-                b: colors.blue
+                b: colors.blue,
+                a: ctx.globalAlpha * 100 + 155
             },
-            // Changing this makes smoother borders
-            //It also affects coloring(wont apply if colors are very similar);
-            tolerance = 40;
+        // Changing this makes smoother borders
+        //It also affects coloring(wont apply if colors are very similar);
+            tolerance = 50;
 
-        alterColors(mousePositionX, mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2], 255);
-        function alterColors(startX, startY, startR, startG, startB) {
+        alterColors(mousePositionX, mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2]);
+        function alterColors(startX, startY, startR, startG, startB, startA) {
 
             if ((desiredColor.r - tolerance <= startR && desiredColor.r + tolerance >= startR) &&
                 (desiredColor.g - tolerance <= startG && desiredColor.g + tolerance >= startG) &&
@@ -72,7 +74,7 @@
                 while (y <= drawingBoundBottom && matchStartColor(pixelPos, startR, startG, startB)) {
                     y += 1;
 
-                    colorPixel(pixelPos, desiredColor.r, desiredColor.g, desiredColor.b);
+                    colorPixel(pixelPos, desiredColor.r, desiredColor.g, desiredColor.b, desiredColor.a);
 
                     if (x > drawingBoundLeft) {
                         if (matchStartColor(pixelPos - 4, startR, startG, startB)) {
@@ -104,15 +106,15 @@
 
 
             function matchStartColor(pixelPos) {
-                var r = colorLayer.data[pixelPos];
-                var g = colorLayer.data[pixelPos + 1];
-                var b = colorLayer.data[pixelPos + 2];
+                var r = colorLayer.data[pixelPos],
+                    g = colorLayer.data[pixelPos + 1],
+                    b = colorLayer.data[pixelPos + 2];
                 if ((r - tolerance <= startR && r + tolerance >= startR) &&
                     (g - tolerance <= startG && g + tolerance >= startG) &&
                     (b - tolerance <= startB && b + tolerance >= startB)) {
                     return true;
                 } else {
-                    return false;
+                        return false;
                 }
 
             }
