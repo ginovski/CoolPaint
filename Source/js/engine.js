@@ -5,7 +5,7 @@ function init(canvas, width, height) {
     canvas.width = width;
     canvas.height = height;
 
-    ctx.lineWidth = 13;
+    ctx.lineWidth = 10;
 
     //Fixes issue with paint bucket drawing over black
     //initial color on the canvas is (0,0,0)...
@@ -31,12 +31,14 @@ function changeTool(toolItem) {
         $('canvas').mouseup();
     }
 
-    var button = $('#flipper');
+   var button = $('#flipper');
     if(tool.name === 'Triangle'){
         var element = $('<button id = flipper onclick="updateToolSettings()">Flip</button>').css({
-            'position': 'absolute',
-            'top': '30px',
-            'left': '250px',
+            'position': 'fixed',
+            'top': '0px',
+            'left': '540px',
+            'background-image': 'url(../img/button-colors.jpg)',
+            'font-family': "'Cherry Cream Soda', cursive",
             'z-index': 2,
             'font-weight': 'bold',
             'padding': '3px 8px',
@@ -168,6 +170,7 @@ $(document).ready(function () {
     $('#submit').click(insertImage);
 
     $('#canvas').mousemove(function () {
-        $('#coordinates').html('X: ' + mousePositionX + '  Y: ' + mousePositionY);
+        $('#x').html('X: ' + mousePositionX);
+        $('#y').html('Y: ' + mousePositionY);
     });
 });
