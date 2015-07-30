@@ -186,7 +186,7 @@ body {
     background-image: url(../img/button-colors.jpg);
 }
 
-    #bottom-layer button {
+    #bottom-layer button, a {
         font-family: 'Cherry Cream Soda', cursive;
         color: black;
         font-weight: bold;
