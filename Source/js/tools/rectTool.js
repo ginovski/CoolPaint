@@ -4,7 +4,8 @@
     var height = 50;
 
     function rectToolUpdateSettings(){
-        //ctx.strokeStyle = 'black';
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
 
     function rectToolMouseDown(){

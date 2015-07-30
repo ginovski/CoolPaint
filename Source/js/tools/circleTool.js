@@ -3,8 +3,8 @@
         defaultRadius=40;
 
     function circleToolUpdateSettings(){
-        //ctx.strokeStyle = 'black';
-        //ctx.fillStyle = 'white';
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
 
     function circleToolMouseDown(){

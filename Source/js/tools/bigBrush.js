@@ -1,7 +1,11 @@
 (function () {
     var bigBrushCursor = 'img/toolIcons/bigBrush.png';
-    var bigBrushTool = makeTool('Big Brush', bigBrushCursor, applySprayOnMouseDown, null, null, null);
+    var bigBrushTool = makeTool('Big Brush', bigBrushCursor, applySprayOnMouseDown, null, null, updateBigBrushToolSettings);
 
+    function updateBigBrushToolSettings(){
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
+    }
     function applySprayOnMouseDown() {
         if(mouseClicked){
             sleep()

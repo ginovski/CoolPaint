@@ -1,7 +1,11 @@
 (function () {
     var bucketCursor = 'img/toolIcons/bucket.png';
-    var bucketTool = makeTool('Bucket', bucketCursor, bucketToolMouseDown, null, null, null);
+    var bucketTool = makeTool('Bucket', bucketCursor, bucketToolMouseDown, null, null, updateBucketToolSettings);
 
+    function updateBucketToolSettings(){
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
+    }
     function bucketToolMouseDown() {
         var canvas = $('#canvas'),
             selectedColor = $('#swatch'),

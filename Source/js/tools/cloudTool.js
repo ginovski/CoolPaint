@@ -2,7 +2,8 @@
     var cloudTool = makeTool('Cloud', '', cloudToolMouseDown, null, null, cloudToolUpdateSettings);
 
     function cloudToolUpdateSettings(){
-        ctx.strokeStyle = 'black';
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
 
     function cloudToolMouseDown() {

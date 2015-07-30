@@ -4,7 +4,8 @@
         startY;
 
     function updateBrushToolSettings() {
-        ctx.strokeStyle = 'black';       
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
 
     function drawEllipse(x, y) {

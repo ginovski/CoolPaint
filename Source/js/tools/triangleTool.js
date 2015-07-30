@@ -2,8 +2,8 @@
     var triangleTool = makeTool('Triangle', '', triangleToolMouseDown, null, null, triangleToolUpdateSettings);
 
     function triangleToolUpdateSettings() {
-        //ctx.strokeStyle = 'black';
-        //ctx.fillStyle = 'white';
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
 
     function triangleToolMouseDown() {

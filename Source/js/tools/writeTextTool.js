@@ -1,8 +1,11 @@
 (function () {
-    var textTool = makeTool('Text', '', writeTextOnMouseDown, null, null, null),
+    var textTool = makeTool('Text', '', writeTextOnMouseDown, null, null, updateTextToolSettings),
         startX,
         startY;
-
+function updateTextToolSettings(){
+    ctx.strokeStyle = swatch.style.backgroundColor;
+    ctx.fillStyle = swatch.style.backgroundColor;
+}
     function writeTextOnMouseDown() {
         startX = mousePositionX + 220;
         startY = mousePositionY+40;

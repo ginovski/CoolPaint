@@ -1,10 +1,11 @@
 (function () {
     var starTool = makeTool('Star', '', starToolMouseDown, null, null, starToolUpdateSettings);
 
-    function starToolUpdateSettings(){
-        //ctx.strokeStyle = 'black';
-        //ctx.fillStyle ='white';
+    function starToolUpdateSettings() {
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
+
     function starToolMouseDown() {
         var scale = 50;
         var tempX = mousePositionX;
@@ -24,6 +25,5 @@
         ctx.lineTo(tempX + scale * 0.5, tempY + scale);
         ctx.lineTo(tempX, tempY);
         ctx.stroke();
-
     }
 }());

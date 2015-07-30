@@ -1,6 +1,10 @@
 (function () {
-    var sprayCanTool = makeTool('Spray can', '', applySprayOnMouseDown, null, null, null);
+    var sprayCanTool = makeTool('Spray can', '', applySprayOnMouseDown, null, null, updateSprayCanToolSettings);
 
+    function updateSprayCanToolSettings(){
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
+    }
     function applySprayOnMouseDown() {
         if(mouseClicked){
             sleep()
@@ -29,7 +33,6 @@
         if(mouseClicked){
             setTimeout(sleep, speedOfDrawing);
         }
-
     }
 
     function getRandomSprayPattern(widthOfSprayPattern) {
