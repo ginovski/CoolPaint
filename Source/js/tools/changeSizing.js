@@ -5,15 +5,15 @@
     interval = 3;
 
 increase.addEventListener('click', function () {
-    radVal.innerHTML = ctx.lineWidth;
     ctx.lineWidth += interval;
+    radVal.innerHTML = ctx.lineWidth;
     writingFontSize += interval;
     ctx.font = writingFontSize + "px Cherry Cream Soda";
 });
 
 decrease.addEventListener('click', function () {
-    radVal.innerHTML = ctx.lineWidth;
     ctx.lineWidth -= interval;
+    radVal.innerHTML = ctx.lineWidth;
     writingFontSize += interval;
     ctx.font = writingFontSize + "px Cherry Cream Soda";
 });
