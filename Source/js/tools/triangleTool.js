@@ -15,7 +15,6 @@
         ctx.lineTo(tempX , tempY + 100);
         ctx.closePath();
         ctx.fill();
-        ctx.stroke();
     }
 
 }());
