@@ -1,7 +1,7 @@
 (function(){
-    var rectTool = makeTool('Rectangle', '', rectToolMouseDown, null, null, rectToolUpdateSettings);
-    var width = 50;
-    var height = 50;
+    var rectTool = makeTool('Rectangle', '', rectToolMouseDown, null, rectToolMouseUp, rectToolUpdateSettings),
+        startX,
+        startY;
 
     function rectToolUpdateSettings(){
         ctx.strokeStyle = swatch.style.backgroundColor;
@@ -9,9 +9,16 @@
     }
 
     function rectToolMouseDown(){
+        startX = mousePositionX;
+        startY = mousePositionY;
+
+    }
+
+    function rectToolMouseUp(){
+        drawRectangle(mousePositionX, mousePositionY);
+    }
+    function drawRectangle(x,y){
         ctx.beginPath();
-        ctx.rect(mousePositionX - width / 2, mousePositionY - height / 2, ctx.lineWidth * 3, ctx.lineWidth * 3);
-        ctx.stroke();
-        ctx.fill();
+        ctx.fillRect(startX, startY, Math.abs(startX-x), Math.abs(startY-y));
     }
 }());
