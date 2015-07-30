@@ -1,5 +1,6 @@
 (function () {
-    var eyeDropperTool = makeTool('Eye dropper', '', getColorOnMouseDown, null, null, null);
+    var eyeDropperCursor = 'img/toolIcons/eyeDropper.png';
+    var eyeDropperTool = makeTool('Eye dropper', eyeDropperCursor, getColorOnMouseDown, null, null, null);
 
     function getColorOnMouseDown() {
         var selectedPixel = ctx.getImageData(mousePositionX, mousePositionY, 1, 1),

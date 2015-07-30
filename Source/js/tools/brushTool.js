@@ -3,8 +3,8 @@
     var brushTool = makeTool('Brush', brushCursor, brushToolMouseDown, brushToolMouseMove, null, updateBrushToolSettings);
 
     function updateBrushToolSettings() {
-        ctx.strokeStyle = 'black';
-        ctx.fillStyle = 'black';
+        ctx.strokeStyle = swatch.style.backgroundColor;
+        ctx.fillStyle = swatch.style.backgroundColor;
     }
 
     function brushToolMouseMove() {

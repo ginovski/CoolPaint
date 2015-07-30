@@ -1,12 +1,12 @@
 (function () {
-    var sprayCanTool = makeTool('Big Brush', '', applySprayOnMouseDown, null, null, null);
+    var bigBrushCursor = 'img/toolIcons/bigBrush.png';
+    var bigBrushTool = makeTool('Big Brush', bigBrushCursor, applySprayOnMouseDown, null, null, null);
 
     function applySprayOnMouseDown() {
         if(mouseClicked){
             sleep()
         }
     }
-
 
     function spray() {
         var centerX = mousePositionX,

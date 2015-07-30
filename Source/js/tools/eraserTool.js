@@ -1,5 +1,6 @@
 (function(){
-    var eraserTool = makeTool('Eraser', '', eraserToolMouseDown, eraserToolToolMouseMove, null, updateEraserToolSettings);
+    var eraserCursor = 'img/toolIcons/eraser.png';
+    var eraserTool = makeTool('Eraser', eraserCursor, eraserToolMouseDown, eraserToolToolMouseMove, null, updateEraserToolSettings);
 
     function updateEraserToolSettings() {
         ctx.strokeStyle = 'white';

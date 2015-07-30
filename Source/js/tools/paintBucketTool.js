@@ -1,5 +1,6 @@
 (function () {
-    var bucketTool = makeTool('Bucket', '', bucketToolMouseDown, null, null, null);
+    var bucketCursor = 'img/toolIcons/bucket.png';
+    var bucketTool = makeTool('Bucket', bucketCursor, bucketToolMouseDown, null, null, null);
 
     function bucketToolMouseDown() {
         var canvas = $('#canvas'),
@@ -20,7 +21,7 @@
             },
             // Changing this makes smoother borders
             //It also affects coloring(wont apply if colors are very similar);
-            tolerance = 80;
+            tolerance = 40;
 
         alterColors(mousePositionX, mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2], 255);
         function alterColors(startX, startY, startR, startG, startB) {

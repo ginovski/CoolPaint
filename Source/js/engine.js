@@ -49,21 +49,23 @@ function addToolsInTheSidebar() {
 function updateToolSettings() {
     if (currentTool.updateToolSettings !== null) {
         currentTool.updateToolSettings();
-
-        // Update the cursor
-        $('#canvas').css('cursor', 'url(' + currentTool.cursor + ') 0 100, crosshair');
     }
+
+    // Update the cursor
+    $('#canvas').css('cursor', 'url(' + currentTool.cursor + ') 0 100, crosshair');
+    updateCursorColor(swatch.style.backgroundColor);
 }
 
 function updateCursorColor(color){
     // currentTool
     var currentToolImage = currentTool.cursor;
 
-    tintImage(currentToolImage, color, function (newCursor) {
-        console.log('new cursor =>', newCursor);
-        $('#canvas').css('cursor', 'url('+newCursor+'), auto');
-        $('#canvas').css('cursor', 'url('+newCursor+') 0 100, auto');
-    });
+    if(currentToolImage && currentTool.name !== 'Eraser'){
+        attachColor(currentToolImage, color, function (newCursor) {
+            $('#canvas').css('cursor', 'url(' + newCursor + '), auto');
+            $('#canvas').css('cursor', 'url(' + newCursor + ') 0 100, auto');
+        });
+    }
 }
 
 function onMouseDown() {
