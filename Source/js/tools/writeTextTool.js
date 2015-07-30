@@ -5,7 +5,7 @@
 function updateTextToolSettings(){
     ctx.strokeStyle = swatch.style.backgroundColor;
     ctx.fillStyle = swatch.style.backgroundColor;
-    ctx.font = "30px Cherry Cream Soda";
+    ctx.font = (writingFontSize||30)+"px Cherry Cream Soda";
 }
     function writeTextOnMouseDown() {
         startX = mousePositionX + 220;
