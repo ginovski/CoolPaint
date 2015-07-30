@@ -30,6 +30,30 @@ function changeTool(toolItem) {
         $('canvas').mousedown();
         $('canvas').mouseup();
     }
+
+    var button = $('#flipper');
+    if(tool.name === 'Triangle'){
+        var element = $('<button id = flipper onclick="updateToolSettings()">Flip</button>').css({
+            'position': 'absolute',
+            'top': '30px',
+            'left': '250px',
+            'z-index': 2,
+            'font-weight': 'bold',
+            'padding': '3px 8px',
+            'font-size': '14px',
+            '-moz-border-radius': '5px 5px 15px 15px',
+            '-webkit-border-radius': '5px 5px 15px 15px',
+            'border-radius': '5px 5px 15px 15px',
+            'border': '3px ridge gray'
+        });
+
+        if (button.length === 0) {
+            $(document.body).append(element);
+            button.click(updateToolSettings);
+        }
+    } else {
+        button.remove();
+    }
 }
 
 function addToolsInTheSidebar() {
@@ -50,6 +74,7 @@ function updateToolSettings() {
     if (currentTool.updateToolSettings !== null) {
         currentTool.updateToolSettings();
     }
+
 
     // Update the cursor
     $('#canvas').css('cursor', 'url(' + currentTool.cursor + ') 0 100, crosshair');
