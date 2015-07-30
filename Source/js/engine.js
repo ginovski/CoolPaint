@@ -142,7 +142,7 @@ $(document).ready(function () {
 
     $('#submit').click(insertImage);
 
-    $('#canvas').mousemove(function (ev) {
-        $('#coordinates').html('X: ' + mousePositionX + '    Y: ' + mousePositionY);
+    $('#canvas').mousemove(function () {
+        $('#coordinates').html('X: ' + mousePositionX + '  Y: ' + mousePositionY);
     });
 });

@@ -103,6 +103,10 @@ body {
     border: 3px ridge gray;
 }
 
+#coordinates{
+    width:100px;
+}
+
 .color {
     display: inline-block;
     width: 30px;
