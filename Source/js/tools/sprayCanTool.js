@@ -13,11 +13,12 @@
             centerY = mousePositionY,
             x,
             y,
+            lineWidth=ctx.lineWidth,
             density = ctx.lineWidth * 3;
 
         for (var i = 0; i < density; i += 1) {
-            x = centerX + getRandomSprayPattern(20);
-            y = centerY + getRandomSprayPattern(20);
+            x = centerX + getRandomSprayPattern(lineWidth);
+            y = centerY + getRandomSprayPattern(lineWidth);
             ctx.fillRect(x, y, 1, 1);
         }
     }
