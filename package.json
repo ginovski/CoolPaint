@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/ginovski/Mary-Pickford#readme",
   "dependencies": {
-    "express": "^4.13.1",
-    "jquery": "^2.1.4",
-    "jquery-ui": "^1.10.5"
+    "express": "^4.13.1"
   }
 }
