@@ -19,6 +19,6 @@
     }
     function drawRectangle(x,y){
         ctx.beginPath();
-        ctx.fillRect(startX, startY, Math.abs(startX-x), Math.abs(startY-y));
+        ctx.strokeRect(startX, startY, Math.abs(startX-x), Math.abs(startY-y));
     }
 }());
