@@ -8,6 +8,16 @@ div {
     font-family: 'Exo 2', sans-serif;
 }
 
+/*css loader*/
+.loader{
+    margin-left: 47%;
+    margin-top: 20%;
+}
+svg path,
+svg rect{
+    fill: #FF6700;
+}
+
 img{
     width:160px;
     height:60px;
