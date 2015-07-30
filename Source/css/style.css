@@ -127,7 +127,8 @@ body {
 }
 
 #red .ui-slider-handle {
-    border-color: #ef2929;
+
+       border-color: #ef2929;
 }
 
 #green .ui-slider-range {
