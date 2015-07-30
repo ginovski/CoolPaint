@@ -5,6 +5,7 @@
 function updateTextToolSettings(){
     ctx.strokeStyle = swatch.style.backgroundColor;
     ctx.fillStyle = swatch.style.backgroundColor;
+    ctx.font = "30px Cherry Cream Soda";
 }
     function writeTextOnMouseDown() {
         startX = mousePositionX + 220;
@@ -28,7 +29,6 @@ function updateTextToolSettings(){
     $(document).keypress(function(e){
         if(e.which === 13){
             var element = $('#userInput');
-			ctx.font = "30px Cherry Cream Soda";
             ctx.fillText(element.val(), element.position().left - 220, element.position().top-45);
             element.remove();
         }
