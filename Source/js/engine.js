@@ -50,9 +50,20 @@ function updateToolSettings() {
     if (currentTool.updateToolSettings !== null) {
         currentTool.updateToolSettings();
 
-        // Change the cursor
+        // Update the cursor
         $('#canvas').css('cursor', 'url(' + currentTool.cursor + ') 0 100, crosshair');
     }
+}
+
+function updateCursorColor(color){
+    // currentTool
+    var currentToolImage = currentTool.cursor;
+
+    tintImage(currentToolImage, color, function (newCursor) {
+        console.log('new cursor =>', newCursor);
+        $('#canvas').css('cursor', 'url('+newCursor+'), auto');
+        $('#canvas').css('cursor', 'url('+newCursor+') 0 100, auto');
+    });
 }
 
 function onMouseDown() {

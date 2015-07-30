@@ -17,6 +17,8 @@ function refreshSwatch() {
       blue = $("#blue").slider("value"),
       hex = hexFromRGB(red, green, blue);
     $("#swatch").css("background-color", "#" + hex);
+
+    setColor('#' + hex);
 }
 $(function () {
     $("#red, #green, #blue").slider({
@@ -27,7 +29,7 @@ $(function () {
         slide: refreshSwatch,
         change: refreshSwatch
     });
-    $("#red").slider("value", 255);
-    $("#green").slider("value", 140);
-    $("#blue").slider("value", 60);
+    $("#red").slider("value", 0);
+    $("#green").slider("value", 0);
+    $("#blue").slider("value", 0);
 });
