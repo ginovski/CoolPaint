@@ -142,5 +142,7 @@ $(document).ready(function () {
 
     $('#submit').click(insertImage);
 
-    //$('#rad-value').html(ctx.lineWidth);
+    $('#canvas').mousemove(function (ev) {
+        $('#coordinates').html('X: ' + mousePositionX + '    Y: ' + mousePositionY);
+    });
 });
