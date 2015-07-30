@@ -9,6 +9,9 @@ div {
 }
 
 /*css loader*/
+.loaderBg{
+    background-color: #444;
+}
 .loader{
     margin-left: 47%;
     margin-top: 20%;

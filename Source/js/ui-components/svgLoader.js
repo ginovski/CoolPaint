@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#enter').click(function(){
         $('#bg').hide();
-        $('body').css('background-color', '#444');
+        $('body').addClass('loaderBg');
         $('.loader').show();
         setTimeout(function(){
             window.location = 'index.html';
