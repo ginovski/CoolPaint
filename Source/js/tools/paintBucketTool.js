@@ -30,7 +30,7 @@
             tolerance = 50;
 
         alterColors(mousePositionX, mousePositionY, startColors.data[0], startColors.data[1], startColors.data[2]);
-        function alterColors(startX, startY, startR, startG, startB, startA) {
+        function alterColors(startX, startY, startR, startG, startB) {
 
             if ((desiredColor.r - tolerance <= startR && desiredColor.r + tolerance >= startR) &&
                 (desiredColor.g - tolerance <= startG && desiredColor.g + tolerance >= startG) &&
