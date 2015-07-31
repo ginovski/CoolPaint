@@ -33,21 +33,7 @@ function changeTool(toolItem) {
 
    var button = $('#flipper');
     if(tool.name === 'Triangle'){
-        var element = $('<button id = flipper onclick="updateToolSettings()">Flip</button>').css({
-            'position': 'fixed',
-            'top': '0px',
-            'left': '540px',
-            'background-image': 'url(../img/button-colors.jpg)',
-            'font-family': "'Cherry Cream Soda', cursive",
-            'z-index': 2,
-            'font-weight': 'bold',
-            'padding': '3px 8px',
-            'font-size': '14px',
-            '-moz-border-radius': '5px 5px 15px 15px',
-            '-webkit-border-radius': '5px 5px 15px 15px',
-            'border-radius': '5px 5px 15px 15px',
-            'border': '3px ridge gray'
-        });
+        var element = $('<button id ="flipper" onclick="updateToolSettings()">Flip</button>');
 
         if (button.length === 0) {
             $(document.body).append(element);
