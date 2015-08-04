@@ -5,7 +5,7 @@
 function updateTextToolSettings(){
     ctx.strokeStyle = swatch.style.backgroundColor;
     ctx.fillStyle = swatch.style.backgroundColor;
-    ctx.font = (writingFontSize||30)+"px Cherry Cream Soda";
+    ctx.font = (writingFontSize)+"px Cherry Cream Soda', cursive";
 }
     function writeTextOnMouseDown() {
         startX = mousePositionX + 220;
@@ -18,7 +18,8 @@ function updateTextToolSettings(){
             "filter":"alpha(opacity=50)",
             "opacity": "0.5",
 			"width": "130px",
-			"height": "25px"
+			"height": "25px",
+			"font-family": "'Cherry Cream Soda', cursive",
         });
         var element =$('#userInput');
         if (element.length === 0) {
